@@ -1,4 +1,4 @@
-import {platformBrowserDynamic} from '../node_modules/@angular/platform-browser-dynamic';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app.module';
 

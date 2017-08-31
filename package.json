@@ -1,5 +1,5 @@
 {
-  "name": "angular2-intro",
+  "name": "angular2-start",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
