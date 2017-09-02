@@ -10,15 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var todos = [
-    'Learn Javascript',
-    'Learn Angular 2',
-    'Create app'
+    { title: 'Learn Javascript',
+        completed: true
+    },
+    {
+        title: 'Learn Angular 2',
+        completed: false
+    },
+    {
+        title: 'Create app',
+        completed: false
+    }
 ];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Angular 2Do";
         this.todos = todos;
     }
+    AppComponent.prototype.toggle = function (todo) {
+        todo.completed = !todo.completed;
+    };
+    AppComponent.prototype.delete = function (todo) {
+        var index = this.todos.indexOf(todo);
+        if (index > -1) {
+            this.todos.splice(index, 1);
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

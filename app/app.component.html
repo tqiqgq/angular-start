@@ -5,16 +5,16 @@
  
  <main>
  <section class="todo-list" *ngIf="todos.length">
- <div class="todo-item" *ngFor="let todo of todos" [ngClass]="{ 'completed': true }">
+ <div class="todo-item" *ngFor="let todo of todos" [class.completed]="todo.completed">
  
- 				<button class="checkbox icon">
- 	                <i class="material-icons">check_box_outline_blank</i>
+ 				<button class="checkbox icon" (click)="toggle(todo)">
+ 	                <i class="material-icons" >{{todo.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
  	            </button>
  
-              <span class="title">{{todo}}</span>
+              <span class="title">{{todo.title}}</span>
  	
               <div class="actions">
-                  <button class="delete icon">
+                  <button class="delete icon" (click) = "delete(todo)">
                       <i class="material-icons">delete</i>
                   </button>
               </div>
